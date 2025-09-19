@@ -23,6 +23,11 @@ export class UserDto {
 
     @ApiProperty()
     @IsNotEmpty()
+    @IsString({ message: 'Username must be a string' })
+    password: string;
+
+    @ApiProperty()
+    @IsNotEmpty()
     @IsEmail({}, { message: 'Invalid email address' })
     @Length(10, 255, { message: 'Email must be between 10 and 255 characters long ' })
     email: string;

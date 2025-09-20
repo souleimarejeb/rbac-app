@@ -23,6 +23,11 @@ export class UserController {
         return this.userService.getOne(id);
     }
 
+    @Get('/username/:username')
+    findOne(@Param('username') username : string) {
+        return this.userService.findOne(username);
+    }
+
     @Get()
     getAll() {
         return this.userService.getAll();
